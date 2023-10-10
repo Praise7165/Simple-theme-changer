@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple Theme Changer</title>
+
+        <style>
+
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+            }
+      
+            html {
+              font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+      
+            section {
+              height: 100dvh;
+              width: 100dvw;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 16px;
+            }
+      
+            main {
+              max-width: 480px;
+              margin: 0 auto;
+            }
+      
+      
+            @media only screen and (max-width: 480px) {
+      
+              main {
+                margin: 0 2.25rem;
+              }
+      
+            }
+
+            #light {
+              margin-top: 1rem;
+              margin-bottom: 2rem;
+            }
+      
+      
+          </style>
+    </head>
+    <body>
+
+
+        <section>
+            <main>
+                <form>
+                    <label>Select theme</label><br>
+                    <label for="light"><input type="radio" id="light" name="theme" value="light" checked> Light Theme</label>
+                    <label for="dark"><input type="radio" id="dark" name="theme" value="dark"> Dark Theme</label>
+                </form>
+        
+                <h1>This is my website</h1>
+            </main>
+        </section>
+
+
+        <script>
+
+            const pageBody = document.querySelector("section");
+            const form = document.querySelector("form");
+
+
+            function changeColor(bgColor, textColor) {
+                pageBody.style.backgroundColor = bgColor;
+                pageBody.style.color = textColor;
+            };
+
+
+            form.addEventListener("click", (event) => {
+                if (event.target.tagName == "INPUT") {
+                    event.target.value === "light" ? changeColor("white", "black") : changeColor("black", "white");
+                }
+            });
+
+
+
+
+        </script>
+
+        
+    </body>
+</html>
