@@ -82,11 +82,29 @@
             };
 
 
+            
+            // Using ternary operator to toggle between light and dark mode
             form.addEventListener("click", (event) => {
                 if (event.target.tagName == "INPUT") {
                     event.target.value === "light" ? changeColor("white", "black") : changeColor("black", "white");
                 }
             });
+            
+
+
+            // Using switch statement to toggle between light and dark mode
+            form.addEventListener("click", (event) => {
+              if (event.target.tagName = "INPUT") {
+                switch (event.target.value) {
+                  case "light":
+                    changeColor("white", "black");
+                    break;
+                  case "dark":
+                    changeColor("black", "white");
+                    break;
+                }
+              }
+            })
 
 
 
